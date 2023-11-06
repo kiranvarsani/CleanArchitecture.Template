@@ -7,6 +7,9 @@ namespace Infrastructure.Data;
 
 public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWork
 {
+    public ApplicationDbContext()
+    {
+    }
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
         : base(options)
     {
@@ -15,8 +18,8 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext, IUnitOfWor
     protected override void OnModelCreating(ModelBuilder builder)
     {
         builder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-
         base.OnModelCreating(builder);
     }
+    
     public DbSet<WeatherForecastEntity> WeatherForecasts => Set<WeatherForecastEntity>();
 }

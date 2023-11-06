@@ -1,0 +1,35 @@
+﻿# Get Weather Forecast
+GET {{Web_HostAddress}}/WeatherForecast
+Content-Type: application/json
+
+###
+# Add new weather forecast
+POST {{Web_HostAddress}}/WeatherForecast
+Content-Type: application/json
+
+{
+  "date": "2025-11-05",
+  "temperatureC": 25,
+  "summary": "It's in future"
+}
+
+###
+# Update weather forecast
+PUT {{Web_HostAddress}}/WeatherForecast
+Content-Type: application/json
+
+{
+  "id": 4,
+  "date": "2024-04-05",
+  "temperatureC": 51,
+  "summary": "Super duper Hot"
+}
+
+###
+# Delete weather forecast
+DELETE {{Web_HostAddress}}/WeatherForecast
+Content-Type: application/json
+
+{
+  "id": 10
+}

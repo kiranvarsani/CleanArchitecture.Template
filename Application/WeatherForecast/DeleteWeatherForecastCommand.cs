@@ -2,5 +2,5 @@
 
 public class DeleteWeatherForecastCommand
 {
-    public int WeatherForecastId { get; set; }
+    public int Id { get; set; }
 }

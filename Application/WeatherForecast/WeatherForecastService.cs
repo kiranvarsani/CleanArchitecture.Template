@@ -21,7 +21,7 @@ public sealed class WeatherForecastService : IWeatherForecastService
         {
             weatherForecastResponses.Add(new WeatherForecastResponse
             {
-                Id = weatherForecast.Id,
+                Id = weatherForecast.Id ?? 0,
                 Date = weatherForecast.Date,
                 Summary = weatherForecast.Summary,
                 TemperatureC = weatherForecast.TemperatureC

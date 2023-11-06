@@ -10,7 +10,7 @@ public record WeatherForecastResponse
 
     public WeatherForecastResponse(WeatherForecastEntity weatherForecastEntity)
     {
-        Id = weatherForecastEntity.Id;
+        Id = weatherForecastEntity.Id ?? 0;
         Date = weatherForecastEntity.Date;
         TemperatureC = weatherForecastEntity.TemperatureC;
         Summary = weatherForecastEntity.Summary;

@@ -37,17 +37,16 @@ public class WeatherForecastController : ControllerBase
     }
     
     [HttpPut(Name = "WeatherForecast")]
-    [HttpPatch(Name = "WeatherForecast")]
     public WeatherForecastResponse Update([FromBody]UpdateWeatherForecastCommand command)
     {
         _logger.LogInformation("Updating Weather Forecast...");
-        return _weatherService.UpdateWeatherForecast(command.WeatherForecastId, command.Date, command.TemperatureC, command.Summary);
+        return _weatherService.UpdateWeatherForecast(command.Id, command.Date, command.TemperatureC, command.Summary);
     }
     
     [HttpDelete(Name = "WeatherForecast")]
     public IEnumerable<WeatherForecastResponse> Delete([FromBody]DeleteWeatherForecastCommand command)
     {
         _logger.LogInformation("Deleting Weather Forecast...");
-        return _weatherService.DeleteWeatherForecast(command.WeatherForecastId);
+        return _weatherService.DeleteWeatherForecast(command.Id);
     }
 }
